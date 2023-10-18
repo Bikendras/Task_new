@@ -1,8 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Cards from './Cards';
-import AddData from './AddData';
-import {BrowserRouter,Router, Route, Routes} from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import TableEdit from './TableEdit';
 
 function App() {
   return (
@@ -10,8 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Cards/>} ></Route>
-          <Route path='nextpage' element={<AddData/>} ></Route>
-          
+          <Route path='tableEdit' element={<TableEdit/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

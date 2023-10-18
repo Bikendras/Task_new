@@ -12,14 +12,13 @@ code {
     monospace;
 }
 .mail{
-    width: 70%;
+    width: 80%;
     margin: auto;
-    /* display: flex; */
     justify-content: space-between;
     object-fit: cover;
 }
 .cards{
-  width: 30%;
+  width: 28%;
   float: left;
   box-shadow: 0px 0px 10px #d2cfcf;
   margin: 10px;
@@ -51,8 +50,7 @@ img{
 }
 @media screen and (min-width: 280px) {
   .mail{
-    padding: 10px 0px 0px 0px;
-    margin: auto;
+    display: block;
   }
   .cards{
     width: 100%;
@@ -62,22 +60,20 @@ img{
 }
 @media screen and (min-width: 600px) {
   .mail{
-    padding: 10px 0px 0px 0px;
-    margin: auto;
+    display: block;
   }
   .cards{
-    width: 45%;
+    width: 42%;
     margin: 0px;
     padding: 10px;
   }
 }
 @media screen and (min-width: 800px) {
   .mail{
-    padding: 10px 0px 0px 0px;
-    margin: auto;
+    display: block;
   }
   .cards{
-    width: 27% !important;
+    width: 28%;
     margin: 10px;
     padding: 10px;
   }
