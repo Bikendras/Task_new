@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 *.txt
 node_modules/
+=======
+*.txt
+node_modules/
+>>>>>>> 225dc97ec6feab37010437b6beb31ecaa59e87ca
