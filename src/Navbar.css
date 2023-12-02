@@ -1,0 +1,39 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.navbar_main{
+    background-color: aqua;
+    margin-bottom: 10px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav_containt ul{
+    display: flex;
+    list-style: none;
+}
+.nav_containt ul li a{
+    margin: 10px;
+    text-decoration: none;
+}
+@media screen and (max-width: 280px) {
+    .navbar_main{
+        width: 100% !important;
+      }
+      .nav_containt ul li a{
+        font-size: 12px;
+      }
+}
+@media screen and (max-width: 600px) {
+    .navbar_main{
+      width: 100%;
+    }
+    .nav_containt ul{
+        display: flex;
+    }
+  }
+
+

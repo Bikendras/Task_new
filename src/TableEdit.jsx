@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import TableDataShow from "./TableDataShow";
 
 export default function TableEdit() {
   const [name, setName] = useState("");
@@ -15,6 +17,7 @@ export default function TableEdit() {
       setName("");
       setEmail("");
     } else {
+      // save Data in Table... First time...
       setData([...data, { name, email }]);
       setName("");
       setEmail("");
@@ -44,7 +47,7 @@ export default function TableEdit() {
           placeholder="Enter Name"
         />
         <input
-          type="text"
+          type="email"
           value={email} // Use 'value' instead of 'onChange' to set the input value
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter Email"
@@ -53,24 +56,17 @@ export default function TableEdit() {
       <div>
         {name.length > 0 && email.length > 0 ? <button style={{ margin: 10, padding: "5px 15px", cursor: "pointer" }} onClick={() => handleSubmit()}>Save</button> : <button style={{ margin: 10, padding: "5px 15px", cursor: "not-allowed" }}>Save</button>}
       </div>
-
       {data && data.map((a, i) => {
         return (
-          <div key={i}>
+          <div key={i} style={{textAlign:"center"}}>
             <table border='1'>
-              {/* <tr>
-                    <th>Sn</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                     <th>action</th>
-                </tr> */}
               <tr>
-                <td>{i+1}</td>
+                <td>{i + 1}</td>
                 <td>{a.name}</td>
                 <td>{a.email}</td>
                 <tr>
-                  <td><button onClick={() => handleRemove(i)} >delete</button></td>
-                  <td><button onClick={() => handleEdit(i)}>edit</button></td>
+                  <td><button onClick={() => handleRemove(i)} ><DeleteOutlined /></button></td>
+                  <td><button onClick={() => handleEdit(i)}><EditOutlined /></button></td>
                 </tr>
               </tr>
             </table>
@@ -79,7 +75,7 @@ export default function TableEdit() {
       }
       )
       }
-    
+      {/* {show?<TableDataShow name={name} email={email} handleRemove={handleRemove} handleEdit={handleEdit} />:''} */}
     </div>
   );
 }

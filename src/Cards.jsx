@@ -134,9 +134,9 @@ export default function Cards() {
     const [currentpage,setCurrentpage] = useState(1);
     const cardperPage = 6;
 
-    const handlepageChange=(page)=>{
-        setCurrentpage(page)
-    }
+    // const handlepageChange=(page)=>{
+    //     setCurrentpage(page)
+    // }
     const startIndex = (currentpage-1)*cardperPage;
     const endIndex = startIndex + cardperPage;
     const cardstoDisplay = data.slice(startIndex,endIndex);
@@ -147,16 +147,15 @@ export default function Cards() {
         // Remove the element at the specified index
         dataCopy.splice(index, 1);
         // Update the state with the modified array
-        setData(dataCopy); 
+        setData(dataCopy);
     }
 
     const handleAddcard=(index)=>{
         const dataCopy = [...data];
         const newdata=data.splice(index+1,1);
-        console.log(newdata);
-        dataCopy.push(...newdata);
-        console.log(dataCopy);
-        setData(dataCopy);
+        // console.log(newdata);
+        const ab=[...dataCopy,...newdata]
+        setData(ab);
     }
     useEffect(() => {
         setTimeout(() => {
@@ -168,13 +167,13 @@ export default function Cards() {
         console.log(cardIndex)
     }
     return (
-        <div style={{display: "grid"}}>
-            {loading?(<h1 style={{display: "flex", placeSelf: "center"}}>Loading...</h1>):(
+        <div>
+            {loading?(<h1 style={{alignItems: 'center'}}>Loading...</h1>):(
                 <div>
                 {
                     cardstoDisplay.map((a, index) => {
                         return (
-                            <div className='mail'>
+                            <div key={index} className='mail'>
                                 <div className='cards'>
                                     <div className='id'>{a.id}</div>
                                     <h3>{a.head}</h3>
@@ -201,13 +200,12 @@ export default function Cards() {
                 )}
             </div> */}
             
-            <div style={{display: "flex", placeSelf: "center"}}>
+            {/* <div style={{display: "flex", placeSelf: "center"}}>
                 {data.map((item, index) => (
                     <div style={{marginRight:8, cursor:"pointer"}} onClick={(e) =>NextCard(index)}><img src={item.img}></img> </div>
                 ))}
-            </div>
-            {/* <Outlet/> */}
-            <Link to='/tableEdit' style={{placeSelf: "center", fontSize:30,padding:30}}>TableEdit</Link>
+            </div> */}
+            {/* <Link to='/tableEdit' style={{placeSelf: "center", fontSize:30,padding:30}}>TableEdit</Link> */}
         </div>
     )
 }
